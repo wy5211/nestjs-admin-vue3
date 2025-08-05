@@ -34,7 +34,13 @@ export class MainService {
     const loginRes = await this.userService.login(user, loginLog);
     loginLog.status = loginRes.code === SUCCESS_CODE ? '0' : '1';
     loginLog.msg = loginRes.msg;
+
+    if (loginRes.data.userName) {
+      loginLog.userName = loginRes.data.userName;
+      delete loginRes.data.userName;
+    }
     this.loginlogService.create(loginLog);
+
     return loginRes;
   }
   /**

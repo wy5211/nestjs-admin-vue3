@@ -385,6 +385,7 @@ export class UserService {
     return ResultData.ok(
       {
         token,
+        userName: userData.userName,
       },
       '登录成功',
     );
