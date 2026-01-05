@@ -44,8 +44,8 @@ db:
 
 # redis 配置
 redis:
-  host: 'localhost'
-  password: '*********'
+  host: '127.0.0.1'
+  password: 'myredispass'
   port: 6379
   db: 2
   keyPrefix: ''
